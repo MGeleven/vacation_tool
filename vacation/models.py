@@ -13,7 +13,8 @@ class User(UserMixin, db.Model):
 
 class Vacation(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
-	period = db.Column(db.String(100), nullable=False)
+	start_period = db.Column(db.String(100), nullable=False)
+	end_period = db.Column(db.String(100), nullable=False)
 	user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
 
 class OAuth(OAuthConsumerMixin, db.Model):
